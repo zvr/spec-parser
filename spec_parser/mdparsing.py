@@ -121,6 +121,11 @@ class NestedListSection(Section):
         collected = []
         while i < len(lines):
             l = lines[i]
+            if l.strip():
+                break
+            i += 1
+        while i < len(lines):
+            l = lines[i]
             if not l.strip():
                 break
             cur_indent = len(l) - len(l.lstrip())
